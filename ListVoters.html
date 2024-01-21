@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Decentralized Application</title>
+    <script src="main.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js" type="application/javascript"></script>
+    <title>Centered Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #2c3e50;
+            font-family: 'Open Sans', sans-serif;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #34495e;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px auto 0;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        input[type=text] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type=text]:focus {
+            border-color: #2980b9;
+        }
+
+        input[type=submit] {
+            background-color: #2ecc71;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type=submit]:hover {
+            background-color: #27ae60;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        span {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        #myTable th,
+        #myTable td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #myTable th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index.html">Vote</a>
+        <a href="/ListVoters.html">List Voters</a>
+    </div>
+
+    <div class="container">
+        <button onclick="connectMetamask()">Connect Metamask</button>
+        <p id="metamasknotification"></p>
+    </div>
+
+    <div class="container">
+        <form method="POST" action="/vote" enctype="multipart/form-data">
+            <span>Add candidate here</span>
+            <input type="text" name="vote" placeholder="Add name of candidate ... ">
+            <input type="submit" value="Add Candidate">
+        </form>
+    </div>
+
+    <div>
+        <p id="votingStatus"></p>
+    </div>
+
+    <div class="container">
+        <button onclick="getAllCandidates()">List All Candidates</button>
+        <p id="p3"></p>
+    </div>
+
+    <div class="container">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Candidate name</th>
+                    <th>Candidate votes</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
