@@ -19,7 +19,6 @@ constructor(string[] memory _candidateNames, uint256 _durationInMinutes) {
         candidates.push(Candidate({
             name: _candidateNames[i],
             voteCount: 0
-
         }));
     }
     owner = msg.sender;

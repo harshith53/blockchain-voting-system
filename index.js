@@ -20,6 +20,8 @@ const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 
 const {abi} = require('./artifacts/contracts/Voting.sol/Voting.json');
 const provider = new ethers.providers.JsonRpcProvider(API_URL);
+// const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545'); 
+// let provider = new ethers.providers.JsonRpcProvider("HTTP://127.0.0.1:8545");
 
 const signer = new ethers.Wallet(PRIVATE_KEY, provider);
 
